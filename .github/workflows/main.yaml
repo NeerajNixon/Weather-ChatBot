@@ -31,5 +31,6 @@ jobs:
         ECR_REPOSITORY: github-sample
         IMAGE_TAG: latest
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker build -t github-sample .
+        docker tag github-sample:latest public.ecr.aws/t3f1b1b3/github-sample:latest
+        docker push public.ecr.aws/t3f1b1b3/github-sample:latest
